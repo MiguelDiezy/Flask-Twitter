@@ -10,3 +10,10 @@
 - Crear archivo .env donde guardar la "SECRET_KEY" utilizada for Flask
 - Las contraseñas se encriptan con una función hash.
 
+### Trabajando en:
+- Mensajes directos.
+- Posibilidad de añadir imagenes a los tweets.
+- Imagen de fondo de perfil.
+- Posibilidad de cambiar la foto de perfil.
+- Panel de noticias en la parte derecha de la página.
+- Refinar el Front-End (No es mi fuerte 😅)
