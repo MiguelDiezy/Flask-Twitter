@@ -3,9 +3,9 @@
 ![alt text](https://i.gyazo.com/3b92908f95bd5bfe0cce3b8b9e3988f1.png)
 ![alt text](https://i.gyazo.com/9d3c1828672fe4c23db46ea754fe58c3.png)
 
-#Semi-Clon de Twitter replicando las funciones basicas de este.
-##Creado con Flask
-###Todavia trabajando en ello.
+# Semi-Clon de Twitter replicando las funciones basicas de este.
+## Creado con Flask
+### Todavia trabajando en ello.
 
 - Crear archivo .env donde guardar la "SECRET_KEY" utilizada for Flask
 - Las contraseñas se encriptan con una función hash.
