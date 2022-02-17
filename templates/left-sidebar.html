@@ -1,0 +1,16 @@
+<div class="left-sidebar-item">
+    <a href="{{ url_for('mainpage') }}"><i class="fas fa-home icon"></i><span>Inicio</span></a>
+</div>
+<div class="left-sidebar-item">
+    <a href="{{ url_for('user_profile', username=current_user.username) }}"><i class="fas fa-user icon"></i><span>Perfil</span></a>
+</div>
+<div class="left-sidebar-item">
+    {% if (not_seen_notifications|length) == 0 %}
+    <a href="{{ url_for('notifications_page') }}"><i class="fas fa-bell icon"></i><span>Notificaciones</span></a>
+    {% else %}
+    <a href="{{ url_for('notifications_page') }}"><i class="fas fa-bell icon"></i><span>Notificaciones</span></a><div class="notification-number noti-circulo">{{ not_seen_notifications|length }}</div>
+    {% endif %}
+</div>
+<div class="left-sidebar-item">
+<a href="{{ url_for('logout') }}"><i class="fas fa-door-open icon"></i><span>Salir</span></a>
+</div>

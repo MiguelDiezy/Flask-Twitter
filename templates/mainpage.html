@@ -1,0 +1,43 @@
+{% extends "navbar.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+    <div class="row all-content">
+        <div class="col-3 left-sidebar">
+            {% include "left-sidebar.html" %}
+        </div>
+        <div class="col-6 main-container">
+            <div class="row tweet-area">
+                <h1 class="twotter-name">TWOTTER</h1>
+                <div class="col tweet-textarea">                       
+                    <form class="form-floating text-form" method="POST" action="{{ url_for('mainpage') }}">
+                        <div class="row">
+                            <div class="col-2 foto-textarea circulo">
+                                <a href="{{ url_for('user_profile', username=current_user.username) }}"><img src="{{ current_user.email | gravatar }}"/></a>
+                            </div>
+                            <div class="col">
+                                {{ twots_form.csrf_token }}
+                                {{ wtf.form_field(twots_form.text) }}
+                                <input class="btn btn-primary text-form-button" type="submit" value="Twittear">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            {% for tweet in tweets %}
+                {% if tweet.is_comment == True %}
+                {% include "comment.html" %}
+                {% elif tweet.is_retweet == False %}
+                {% include "tweet.html" %}
+                {% else %}
+                {% include "retweet.html" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-3 right-sidebar">
+            {% include "right-sidebar.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}
