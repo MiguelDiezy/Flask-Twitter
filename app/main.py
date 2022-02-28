@@ -11,6 +11,7 @@ from flask_bootstrap import Bootstrap
 from flask_gravatar import Gravatar
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+
 import os
 from dotenv import load_dotenv
 
@@ -19,7 +20,7 @@ load_dotenv()
 # Flask App
 app = Flask(__name__)
 Bootstrap(app)
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+app.config["SECRET_KEY"] = os.environ['SECRET_KEY']
 
 # Gravatar
 Gravatar(app,
