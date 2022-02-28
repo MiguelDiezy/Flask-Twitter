@@ -226,6 +226,10 @@ div .form-group label {
     margin: 0;
     margin-bottom: 20px;
     margin-top: 20px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px;
 }
 
 .alias {
@@ -322,4 +326,47 @@ div .form-group label {
     background-color: #7e47b5;
     color: white;
     border-radius: 60%;
+}
+
+@media screen and (max-width: 1400px) {
+    .left-sidebar-item span {
+        font-size: 20px;
+    }
+    .foto-textarea img {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    .text-form textarea {
+        width: 60%;
+        margin: 0!important;
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .left-sidebar-item span {
+        font-size: 15px;
+    }
+    .foto-perfil img {
+        width: 60px;
+        height: 60px;
+    }
+    
+}
+
+@media screen and (max-width: 770px) {
+    .left-sidebar-item span {
+        display: none;
+    }
+    .left-sidebar-item {
+        text-align: center;
+    } 
+}
+
+@media screen and (max-width: 577px) {
+    .foto-textarea img {
+        display: none;
+    }
 }

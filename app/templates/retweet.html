@@ -1,10 +1,10 @@
 <div class="tweet-model">
     <div class="row" onclick='location.href="{{ url_for('comment_tweet', tweet_id=tweet.tweet.id) }}";' style="cursor: pointer;">
         <a href="{{ url_for('user_profile', username=tweet.user.username) }}" class="retweet-text">{{ tweet.user.username }} Lo retwitteo</a>
-        <div class="col-2 foto-perfil circulo">
+        <div class="col-xl-2 col-md-12 foto-perfil circulo">
             <a href="{{ url_for('user_profile', username=tweet.tweet.author.username) }}"><img src="{{ tweet.tweet.author.email | gravatar }}"/></a>
         </div>
-        <div class="col-10 tweet-text">
+        <div class="col-xl-10 tweet-text">
             <div class="row">
                 <h3> <a href="{{ url_for('user_profile', username=tweet.tweet.author.username) }}">@{{ tweet.tweet.author.username }}</a></h3>
             </div>

@@ -12,10 +12,10 @@
                 <div class="col tweet-textarea">                       
                     <form class="form-floating text-form" method="POST" action="{{ url_for('mainpage') }}">
                         <div class="row">
-                            <div class="col-2 foto-textarea circulo">
+                            <div class="col-2 col-sm-12 foto-textarea circulo">
                                 <a href="{{ url_for('user_profile', username=current_user.username) }}"><img src="{{ current_user.email | gravatar }}"/></a>
                             </div>
-                            <div class="col">
+                            <div class="col col-sm-12">
                                 {{ twots_form.csrf_token }}
                                 {{ wtf.form_field(twots_form.text) }}
                                 <input class="btn btn-primary text-form-button" type="submit" value="Twittear">

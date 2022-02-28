@@ -2,7 +2,7 @@ from datetime import  datetime
 from email.policy import default
 from typing import final
 from flask import Flask, render_template, redirect, url_for, request, flash
-from app.forms import RegisterForm, TweetForm, LoginForm, SearchbarForm
+from forms import RegisterForm, TweetForm, LoginForm, SearchbarForm
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import select, text
 from sqlalchemy.orm import relationship

@@ -1,15 +1,15 @@
 <div class="tweet-model">
     <div class="row" onclick='location.href="{{ url_for('comment_tweet', tweet_id=tweet.id) }}";' style="cursor: pointer;">
-        <div class="col-2 foto-perfil circulo">
+        <div class="col-xl-2 col-md-12 foto-perfil circulo">
             <a href="{{ url_for('user_profile', username=tweet.author.username) }}"><img src="{{ tweet.author.email | gravatar }}"/></a>
         </div>
-        <div class="col-10 tweet-text">
+        <div class="col-xl-10 tweet-text">
             <div class="row">
                 {% if current_user.id == tweet.author_id %}
-                <div class="col-11">
+                <div class="col-xl-11 col-md-10">
                     <h3><a href="{{ url_for('user_profile', username=tweet.author.username) }}">@{{ tweet.author.username }}</a></h3>
                 </div>
-                <div class="col-1">
+                <div class="col-xl-1 col-md-1">
                     <a href="{{ url_for('delete_tweet', tweet_id=tweet.id) }}" class="delete-tweet-icon"><i class="far fa-trash-alt"></i></a>
                 </div>
                 {% else %}

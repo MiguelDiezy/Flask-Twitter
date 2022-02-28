@@ -10,7 +10,7 @@
         <div class="col-6 main-container">
             {% if user %}
             <div class="row profile-info">
-                <div class="col foto-perfil circulo">
+                <div class="col circulo">
                     <a href="{{ url_for('user_profile', username=user.username) }}"><img src="{{ user.email | gravatar }}"/></a>
                     <p class="alias">{{ user.username }}</p>
                     <p class="username"><a href="{{ url_for('user_profile', username=user.username) }}">@{{ user.username }}</a></p>
