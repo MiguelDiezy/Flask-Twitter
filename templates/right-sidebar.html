@@ -1,7 +1,0 @@
-<div class="left-sidebar-item">
-    <form class="form-floating searchbar-form" method="POST" action="{{ url_for('search_user')}}">
-        {{ searchbar_form.csrf_token }}
-        {{ wtf.form_field(searchbar_form.username) }}
-        <input class="btn btn-primary form-button" type="submit" value="Buscar">
-    </form>
-</div>
