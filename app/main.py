@@ -242,8 +242,10 @@ class Notification(db.Model):
     is_mention = db.Column(db.Boolean, default=False)
     is_seen = db.Column(db.Boolean, default=False)
 
-
-db.create_all()    
+try:
+    db.create_all()
+except:
+    pass    
 
 
 @app.route('/', methods=["POST", "GET"])
