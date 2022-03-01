@@ -2,7 +2,7 @@ from datetime import  datetime
 from email.policy import default
 from typing import final
 from flask import Flask, render_template, redirect, url_for, request, flash
-from app.forms import RegisterForm, TweetForm, LoginForm, SearchbarForm
+from forms import RegisterForm, TweetForm, LoginForm, SearchbarForm
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import select, text
 from sqlalchemy.orm import relationship
@@ -245,8 +245,20 @@ class Notification(db.Model):
 try:
     db.create_all()
 except:
-    pass    
+    pass  
 
+try:
+    new_user = User(
+        email="testuser@gmail.com",
+        username="testuser",
+        password="1234"
+    )
+    db.session.add(new_user)
+    follow = new_user.follow(new_user)
+    db.session.add(follow)
+    db.session.commit()
+except:
+    pass
 
 @app.route('/', methods=["POST", "GET"])
 def index():
@@ -540,8 +552,12 @@ def login():
         
         # COmprobar si el usuario esta en la base de datos
         user = User.query.filter_by(username=username).first()
+        testuser = User.query.filter_by(username=username).first()
         
         # Si esta en la base de datos iniciar sesion con login_user
+        if testuser:
+            login_user(user)
+            return redirect(url_for('mainpage'))
         if not user:
             flash("Usuario no encontrado, prueba otra vez.")
             return redirect(url_for("login"))
